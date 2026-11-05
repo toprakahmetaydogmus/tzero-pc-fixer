@@ -8,6 +8,7 @@
 [![Zero-Leak Rating](https://img.shields.io/badge/security-100%25%20Zero--Leak%20Certified-success.svg)](https://github.com/toprakahmetaydogmus/tzero-pc-fixer)
 [![Zero Cost](https://img.shields.io/badge/cost-%240.00%20(100%25%20Free%20%26%20Local)-blueviolet.svg)](https://github.com/toprakahmetaydogmus/tzero-pc-fixer)
 [![MCP Protocol](https://img.shields.io/badge/MCP-JSON--RPC%202.0%20Compliant-orange.svg)](pc_fixer_mcp.py)
+[![T-Zero Live Demo](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Zero--GPU%20Live%20Demo-ffd21e?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/spaces/toprakke4/tzero-token-reducer)
 
 <p align="center">
   <img src="assets/tzero_pc_fixer_banner.svg" alt="T-Zero PC-Fixer &amp; Codebase Doctor Banner" width="100%" style="max-width: 960px; border-radius: 12px; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);">
