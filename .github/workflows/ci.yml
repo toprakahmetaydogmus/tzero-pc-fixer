@@ -1,0 +1,45 @@
+name: T-Zero PC-Fixer Master CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build twine
+
+    - name: Verify AST Syntax on Monolithic 12,000+ Line File
+      run: |
+        python -c "import ast; tree = ast.parse(open('tzero_pc_fixer.py', encoding='utf-8').read()); print('AST is 100% valid!')"
+
+    - name: Run Full Test Suite
+      run: |
+        python -m unittest discover -s tests -p "test_*.py" -v
+
+    - name: Build Wheel & Source Distribution
+      run: |
+        python -m build
+
+    - name: Check Package Quality
+      run: |
+        python -m twine check dist/*

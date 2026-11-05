@@ -1,0 +1,17 @@
+# Auto normalize text files to LF on checkout
+* text=auto eol=lf
+
+# Python and config files
+*.py text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+*.md text eol=lf
+
+# Binary files
+*.pyd binary
+*.so binary
+*.dll binary
+*.exe binary
+*.whl binary

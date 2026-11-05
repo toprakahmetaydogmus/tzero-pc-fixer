@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tzero-pc-fixer"
+version = "1.0.0"
+description = "T-Zero PC-Fixer & Codebase Doctor: Autonomous Self-Healing Engine & MCP Server (100% Free & Local Offline)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Toprak Ahmet Aydogmus", email = "siberakademi@org.tr" }
+]
+keywords = [
+    "pc-fixer",
+    "codebase-doctor",
+    "self-healing",
+    "ast",
+    "mcp-server",
+    "linter",
+    "static-analysis",
+    "zero-leak",
+    "security-audit",
+    "cwe",
+    "virtualenv",
+    "git-repair"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Bug Tracking",
+    "Topic :: Security",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "build>=1.0.0",
+    "twine>=4.0.0",
+]
+
+[project.scripts]
+pc-fixer = "tzero_pc_fixer:main"
+pcfixer = "tzero_pc_fixer:main"
+tzero-doctor = "tzero_pc_fixer:main"
+pc-fixer-mcp = "tzero_fixer.mcp_server:main"
+
+[project.urls]
+Homepage = "https://github.com/toprakahmetaydogmus/tzero-pc-fixer"
+Documentation = "https://github.com/toprakahmetaydogmus/tzero-pc-fixer#readme"
+Repository = "https://github.com/toprakahmetaydogmus/tzero-pc-fixer.git"
+Issues = "https://github.com/toprakahmetaydogmus/tzero-pc-fixer/issues"
+Changelog = "https://github.com/toprakahmetaydogmus/tzero-pc-fixer/releases"
+
+[tool.setuptools]
+py-modules = ["tzero_pc_fixer", "pc_fixer_mcp"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tzero_fixer*"]
