@@ -29,3 +29,4 @@ EXPOSE 3000
 
 # Glama standard transport: mcp-proxy wrapping stdio on port 3000
 CMD ["mcp-proxy", "--", "pc-fixer-mcp"]
+

@@ -30,3 +30,4 @@ EXPOSE 3000
 
 # Default entrypoint: Direct stdio MCP Server
 CMD ["pc-fixer-mcp"]
+
