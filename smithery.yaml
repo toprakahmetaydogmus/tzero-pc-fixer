@@ -1,0 +1,13 @@
+# Smithery Configuration for T-Zero PC-Fixer & Codebase Doctor MCP Server
+# Enables 1-click installation via Smithery.ai for Cursor, Claude Desktop, Windsurf, and Antigravity
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties: {}
+  commandFunction:
+    command: "uvx"
+    args:
+      - "--from"
+      - "tzero-pc-fixer"
+      - "pc-fixer-mcp"

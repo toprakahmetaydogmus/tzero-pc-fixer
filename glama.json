@@ -1,0 +1,18 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "name": "tzero-pc-fixer",
+  "displayName": "T-Zero PC-Fixer & Codebase Doctor",
+  "version": "1.0.0",
+  "description": "Autonomous self-healing operating system & codebase doctor (12,200+ lines monolith) + native MCP server for Cursor, Claude Desktop, Windsurf, & Antigravity IDE. Fixes syntax, virtualenvs, Git locks, CWE security, and dev port collisions.",
+  "repository": "https://github.com/toprakahmetaydogmus/tzero-pc-fixer",
+  "maintainers": [
+    "toprakahmetaydogmus"
+  ],
+  "categories": [
+    "developer-tools",
+    "code-analysis",
+    "security"
+  ],
+  "license": "MIT",
+  "homepage": "https://tzero-indol.vercel.app"
+}

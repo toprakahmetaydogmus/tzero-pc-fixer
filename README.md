@@ -73,19 +73,30 @@ flowchart TD
 
 ## 📦 Installation
 
-### Option 1: Install via Pip
+### Option 1: Universal 1-Click Installer (Recommended)
+**Linux & macOS:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/toprakahmetaydogmus/tzero-pc-fixer/main/install.sh | bash
+```
+
+**Windows (PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/toprakahmetaydogmus/tzero-pc-fixer/main/install.ps1 | iex
+```
+
+### Option 2: Install via Pip
 ```bash
 pip install tzero-pc-fixer
 ```
 
-### Option 2: Single-File Zero-Dependency Standalone
+### Option 3: Single-File Zero-Dependency Standalone
 Download the single-file masterpiece `tzero_pc_fixer.py` directly without installing any packages:
 ```bash
 curl -O https://raw.githubusercontent.com/toprakahmetaydogmus/tzero-pc-fixer/main/tzero_pc_fixer.py
 python tzero_pc_fixer.py --help
 ```
 
-### Option 3: From Source
+### Option 4: From Source
 ```bash
 git clone https://github.com/toprakahmetaydogmus/tzero-pc-fixer.git
 cd tzero-pc-fixer

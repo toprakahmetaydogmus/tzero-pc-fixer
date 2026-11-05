@@ -1,0 +1,15 @@
+{
+  "$schema": "https://smithery.ai/docs/config/schema.json",
+  "name": "tzero-pc-fixer",
+  "version": "1.0.0",
+  "displayName": "T-Zero PC-Fixer & Codebase Doctor",
+  "description": "Autonomous self-healing operating system & codebase doctor (12,200+ lines monolith) + native MCP server for Cursor, Claude Desktop, Windsurf, & Antigravity IDE. Fixes syntax, virtualenvs, Git locks, CWE security, and dev port collisions.",
+  "repository": "https://github.com/toprakahmetaydogmus/tzero-pc-fixer",
+  "startCommand": {
+    "type": "stdio",
+    "config": {
+      "command": "pc-fixer-mcp",
+      "args": []
+    }
+  }
+}
