@@ -203,3 +203,4 @@ python -m unittest discover -s tests -p "test_*.py" -v
 
 Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 Crafted with passion by Toprak Ahmet Aydogmus & Siber Akademi T-Zero R&D Team.
+

@@ -8,7 +8,8 @@ version = "1.0.0"
 description = "T-Zero PC-Fixer & Codebase Doctor: Autonomous Self-Healing Engine & MCP Server (100% Free & Local Offline)"
 readme = "README.md"
 requires-python = ">=3.9"
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [
     { name = "Toprak Ahmet Aydogmus", email = "siberakademi@org.tr" }
 ]
@@ -33,7 +34,6 @@ classifiers = [
     "Topic :: Software Development :: Quality Assurance",
     "Topic :: Software Development :: Bug Tracking",
     "Topic :: Security",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Operating System :: Microsoft :: Windows",
     "Operating System :: POSIX :: Linux",
@@ -74,3 +74,4 @@ py-modules = ["tzero_pc_fixer", "pc_fixer_mcp"]
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["tzero_fixer*"]
+
