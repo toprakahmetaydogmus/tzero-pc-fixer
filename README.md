@@ -1,5 +1,5 @@
 # 🩺 T-Zero PC-Fixer & Codebase Doctor
-### *Autonomous Self-Healing Operating System & Codebase Doctor (12,200+ Lines Master Edition)*
+### *Autonomous Self-Healing Operating System & Codebase Doctor (12,650+ Lines Master Edition)*
 
 [![CI Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/toprakahmetaydogmus/tzero-pc-fixer/actions)
 [![Python Support](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue.svg)](https://pypi.org)
@@ -9,13 +9,18 @@
 [![Zero Cost](https://img.shields.io/badge/cost-%240.00%20(100%25%20Free%20%26%20Local)-blueviolet.svg)](https://github.com/toprakahmetaydogmus/tzero-pc-fixer)
 [![MCP Protocol](https://img.shields.io/badge/MCP-JSON--RPC%202.0%20Compliant-orange.svg)](pc_fixer_mcp.py)
 
+<p align="center">
+  <img src="assets/tzero_pc_fixer_banner.svg" alt="T-Zero PC-Fixer &amp; Codebase Doctor Banner" width="100%" style="max-width: 960px; border-radius: 12px; box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);">
+</p>
+
+
 ---
 
 ## 🌟 Executive Overview
 
 **T-Zero PC-Fixer & Codebase Doctor** is an encyclopedic, industrial-grade autonomous self-healing engine and Model Context Protocol (MCP) server. It diagnoses and fixes computer environments, developer toolchains, virtual environments, Git version control issues, AST syntax errors, PEP 517 packaging conflicts, and OWASP/CWE security vulnerabilities with **zero external dependencies** and **$0.00 cloud cost**.
 
-Available as both a **single-file monolithic executable (`tzero_pc_fixer.py`, 12,271 lines)** and a **modular Python package (`tzero_fixer/`)**, it delivers surgical repair recipes with full transactional rollback safety.
+Available as both a **single-file monolithic executable (`tzero_pc_fixer.py`, 12,657 lines)** and a **modular Python package (`tzero_fixer/`)**, it delivers surgical repair recipes with full transactional rollback safety.
 
 ---
 
