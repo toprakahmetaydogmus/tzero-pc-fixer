@@ -2,12 +2,15 @@
 ### *Autonomous Self-Healing Operating System & Codebase Doctor (12,650+ Lines Master Edition)*
 
 [![CI Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/toprakahmetaydogmus/tzero-pc-fixer/actions)
-[![Python Support](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13%20%7C%203.14-blue.svg)](https://pypi.org)
+[![Python Support](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](https://pypi.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Codebase Volume](https://img.shields.io/badge/monolithic%20volume-12%2C200%2B%20lines-purple.svg)](tzero_pc_fixer.py)
+[![Codebase Volume](https://img.shields.io/badge/monolithic%20volume-12%2C650%2B%20lines-purple.svg)](tzero_pc_fixer.py)
 [![Zero-Leak Rating](https://img.shields.io/badge/security-100%25%20Zero--Leak%20Certified-success.svg)](https://github.com/toprakahmetaydogmus/tzero-pc-fixer)
 [![Zero Cost](https://img.shields.io/badge/cost-%240.00%20(100%25%20Free%20%26%20Local)-blueviolet.svg)](https://github.com/toprakahmetaydogmus/tzero-pc-fixer)
 [![MCP Protocol](https://img.shields.io/badge/MCP-JSON--RPC%202.0%20Compliant-orange.svg)](pc_fixer_mcp.py)
+[![Docker Ready](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker&logoColor=white)](Dockerfile)
+[![Smithery](https://smithery.ai/badge/tzero-pc-fixer)](https://smithery.ai/server/tzero-pc-fixer)
+[![Glama](https://img.shields.io/badge/Glama-MCP%20Server-7c3aed.svg)](https://glama.ai/mcp/servers/@toprakahmetaydogmus/tzero-pc-fixer)
 [![T-Zero Live Demo](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Zero--GPU%20Live%20Demo-ffd21e?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/spaces/toprakke4/tzero-token-reducer)
 
 <p align="center">
@@ -146,7 +149,23 @@ pc-fixer --benchmark
 
 T-Zero PC-Fixer exposes a fully compliant JSON-RPC 2.0 stdio MCP server for AI IDEs and assistants:
 
-### Claude Desktop
+### 1-Click Install via Smithery
+To automatically install T-Zero PC-Fixer for Claude Desktop:
+```bash
+npx -y @smithery/cli install tzero-pc-fixer --client claude
+```
+
+### Glama MCP Registry
+Access or configure through [Glama.ai](https://glama.ai/mcp/servers/@toprakahmetaydogmus/tzero-pc-fixer). Both stdio and HTTP/SSE transports are pre-configured.
+
+### Docker Container
+Run the official container directly:
+```bash
+docker build -t tzero-pc-fixer .
+docker run -i tzero-pc-fixer
+```
+
+### Claude Desktop (Manual Config)
 Add to your `claude_desktop_config.json`:
 ```json
 {

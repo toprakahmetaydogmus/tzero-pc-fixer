@@ -88,3 +88,4 @@ Write-Host "✨ T-Zero PC-Fixer installed successfully!" -ForegroundColor Green
 Write-Host "Run: pc-fixer --help to get started." -ForegroundColor Yellow
 Write-Host "MCP Server available at: pc-fixer-mcp" -ForegroundColor Yellow
 Write-Host ""
+

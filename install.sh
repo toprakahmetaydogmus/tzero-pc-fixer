@@ -98,3 +98,4 @@ echo "✨ \033[1;32mT-Zero PC-Fixer installed successfully!\033[0m"
 echo "Run: \033[1;33mpc-fixer --help\033[0m to get started."
 echo "MCP Server available at: \033[1;33mpc-fixer-mcp\033[0m"
 echo ""
+
