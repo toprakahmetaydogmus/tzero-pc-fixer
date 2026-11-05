@@ -60,6 +60,9 @@ MODULE_ORDER = [
     "packaging_abi_surgeon.py",
     "git_advanced_surgeon.py",
     "polyglot_build_healer.py",
+    "cwe_remediator.py",
+    "dead_code_eliminator.py",
+    "async_io_modernizer.py",
     "mcp_server.py",
     "pc_fixer_doctor.py",
     "orchestrator.py",
@@ -75,7 +78,7 @@ def compile_amalgamation(fixer_dir: str, output_file: str) -> Tuple[int, bool]:
 """
 T-Zero PC-Fixer & Codebase Doctor (Master Single-File Edition)
 ============================================================
-Version: 10.4.0 Master Edition | Zero-Leak Certified | 100% Free & Local
+Version: 10.5.0 Master Edition | Zero-Leak Certified | 100% Free & Local
 Architectural Specification: Monolithic Self-Healing Operating System & Codebase Doctor
 
 Components Integrated:
@@ -234,7 +237,7 @@ def main():
     parser.add_argument("--generate-ci", action="store_true", help="Generate GitHub Actions quality gate workflow")
     parser.add_argument("--verify-e2e", action="store_true", help="Run end-to-end synthetic stress verification")
     parser.add_argument("--benchmark", action="store_true", help="Run synthetic self-healing benchmarks")
-    parser.add_argument("--version", action="version", version="%(prog)s 10.4.0 (Master Zero-Leak Edition)")
+    parser.add_argument("--version", action="version", version="%(prog)s 10.5.0 (Master Zero-Leak Edition)")
 
     args = parser.parse_args()
 

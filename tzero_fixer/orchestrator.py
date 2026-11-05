@@ -15,7 +15,7 @@ Features:
 - Unified ANSI terminal rendering and JSON / SARIF v2.1.0 report generation.
 
 Author: Toprak Ahmet Aydogmus (Siber Akademi)
-Version: 10.4.0
+Version: 10.5.0
 """
 
 import json
@@ -46,6 +46,9 @@ from .models import (
 from .os_doctor import OSDoctor
 from .packaging_abi_surgeon import PackagingAbiSurgeon
 from .polyglot_build_healer import PolyglotBuildHealer
+from .cwe_remediator import SecurityCweRemediator
+from .dead_code_eliminator import DeadCodeEliminator
+from .async_io_modernizer import AsyncIoModernizer
 from .security_zero_leak import SecurityZeroLeakDoctor
 from .venv_doctor import VenvDoctor
 
@@ -167,6 +170,12 @@ class FixerOrchestrator:
                     issues.extend(CodeSmellsHealer.diagnose_file(full_p))
                     # Security & Zero-Leak
                     issues.extend(SecurityZeroLeakDoctor.diagnose_file(full_p))
+                    # CWE Security Remediations
+                    issues.extend(SecurityCweRemediator.diagnose_file(full_p))
+                    # Dead Code & Unreachable Stmts
+                    issues.extend(DeadCodeEliminator.diagnose_file(full_p))
+                    # AsyncIO Blocking Checks
+                    issues.extend(AsyncIoModernizer.diagnose_file(full_p))
 
         # Tallies
         crit_c = sum(1 for i in issues if i.severity == SeverityLevel.CRITICAL.value)
@@ -260,6 +269,18 @@ class FixerOrchestrator:
             for issue in [i for i in current_issues if i.metadata.get("issue_type") in ("missing_dockerignore", "makefile_spaces_to_tabs", "makefile_missing_phony", "docker_add_to_copy")]:
                 pass_actions.append(PolyglotBuildHealer.heal_issue(issue, dry_run=dry_run))
 
+            # 10. CWE Remediations
+            for issue in [i for i in current_issues if i.metadata.get("issue_type") in ("cwe_78_shell_injection", "cwe_89_sql_injection", "cwe_327_weak_hash")]:
+                pass_actions.append(SecurityCweRemediator.heal_issue(issue, dry_run=dry_run))
+
+            # 11. Dead Code Prunes
+            for issue in [i for i in current_issues if i.metadata.get("issue_type") == "unreachable_code"]:
+                pass_actions.append(DeadCodeEliminator.heal_issue(issue, dry_run=dry_run))
+
+            # 12. AsyncIO Modernizations
+            for issue in [i for i in current_issues if i.metadata.get("issue_type") == "async_time_sleep"]:
+                pass_actions.append(AsyncIoModernizer.heal_issue(issue, dry_run=dry_run))
+
             all_actions.extend(pass_actions)
 
             if dry_run or not pass_actions:
@@ -291,7 +312,7 @@ class FixerOrchestrator:
     def render_cli(cls, diag: DiagnosticReport, heal: Optional[HealReport] = None):
         """Render high-contrast, beautiful ANSI terminal cockpit report."""
         print("=" * 80)
-        print("\033[1;36m🩺 T-ZERO MASTER PC-FIXER & ENVIRONMENT AUTONOMOUS DOCTOR v10.4.0\033[0m")
+        print("\033[1;36m🩺 T-ZERO MASTER PC-FIXER & ENVIRONMENT AUTONOMOUS DOCTOR v10.5.0\033[0m")
         print("=" * 80)
         print(f"Target Directory: \033[33m{diag.target_dir}\033[0m")
         print(f"Host OS:          \033[32m{diag.environment.os_release}\033[0m (Arch: {diag.environment.python_architecture})")
