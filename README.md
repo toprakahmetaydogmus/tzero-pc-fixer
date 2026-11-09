@@ -11,6 +11,7 @@
 [![Docker Ready](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker&logoColor=white)](Dockerfile)
 [![Smithery](https://smithery.ai/badge/tzero-pc-fixer)](https://smithery.ai/server/tzero-pc-fixer)
 [![Glama](https://img.shields.io/badge/Glama-MCP%20Server-7c3aed.svg)](https://glama.ai/mcp/servers/@toprakahmetaydogmus/tzero-pc-fixer)
+[![M8ven Score](https://m8ven.ai/badge/mcp/toprakahmetaydogmus/tzero-pc-fixer)](https://m8ven.ai/mcp/toprakahmetaydogmus/tzero-pc-fixer?s=readme)
 [![T-Zero Live Demo](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Zero--GPU%20Live%20Demo-ffd21e?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/spaces/toprakke4/tzero-token-reducer)
 
 <p align="center">
