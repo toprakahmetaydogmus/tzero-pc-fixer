@@ -280,9 +280,55 @@ class TestPCFixerMasterEdition(unittest.TestCase):
         list_res = mcp.handle_request({"jsonrpc": "2.0", "id": 2, "method": "tools/list"})
         tools = list_res["result"]["tools"]
         tool_names = [t["name"] for t in tools]
-        self.assertIn("pc_fixer_diagnose", tool_names)
-        self.assertIn("pc_fixer_auto_heal", tool_names)
-        self.assertIn("pc_fixer_check_system", tool_names)
+        all_expected_tools = [
+            "pc_fixer_diagnose",
+            "pc_fixer_auto_heal",
+            "pc_fixer_rollback",
+            "pc_fixer_check_system",
+            "pc_fixer_cwe_audit",
+            "pc_fixer_kill_port_process",
+            "pc_fixer_clean_git_locks",
+        ]
+        for t_name in all_expected_tools:
+            self.assertIn(t_name, tool_names)
+            tool_obj = next(t for t in tools if t["name"] == t_name)
+            self.assertIn("annotations", tool_obj)
+            anns = tool_obj["annotations"]
+            self.assertIn("readOnlyHint", anns)
+            self.assertIn("destructiveHint", anns)
+            self.assertIn("idempotentHint", anns)
+            self.assertIn("openWorldHint", anns)
+
+        # Test tool invocations over MCP JSON-RPC
+        diag_call = mcp.handle_request({
+            "jsonrpc": "2.0", "id": 3, "method": "tools/call",
+            "params": {"name": "pc_fixer_diagnose", "arguments": {"path": "."}}
+        })
+        self.assertFalse(diag_call.get("result", {}).get("isError", False))
+
+        sys_call = mcp.handle_request({
+            "jsonrpc": "2.0", "id": 4, "method": "tools/call",
+            "params": {"name": "pc_fixer_check_system", "arguments": {"ports": [9999]}}
+        })
+        self.assertFalse(sys_call.get("result", {}).get("isError", False))
+
+        cwe_call = mcp.handle_request({
+            "jsonrpc": "2.0", "id": 5, "method": "tools/call",
+            "params": {"name": "pc_fixer_cwe_audit", "arguments": {"path": "."}}
+        })
+        self.assertFalse(cwe_call.get("result", {}).get("isError", False))
+
+        clean_call = mcp.handle_request({
+            "jsonrpc": "2.0", "id": 6, "method": "tools/call",
+            "params": {"name": "pc_fixer_clean_git_locks", "arguments": {"path": "."}}
+        })
+        self.assertFalse(clean_call.get("result", {}).get("isError", False))
+
+        rollback_call = mcp.handle_request({
+            "jsonrpc": "2.0", "id": 7, "method": "tools/call",
+            "params": {"name": "pc_fixer_rollback", "arguments": {"path": ".", "transaction_id": "tx_nonexistent"}}
+        })
+        self.assertIn("result", rollback_call)
 
 
 
